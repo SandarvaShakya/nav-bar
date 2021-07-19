@@ -1,0 +1,153 @@
+:root {
+  --ff-logo: "Tourney", "cursive";
+  --ff-primary: "Roboto", sans-serif;
+
+  --clr-gray-bg: #f1f1f1;
+  --clr-gray-bs: #999;
+  --clr-green: #4b7f52;
+
+  --transition-1: all 0.3s linear;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: var(--clr-gray-bg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+}
+
+main {
+  background: #fff;
+}
+
+.nav {
+  padding: 2em 1em;
+  position: relative;
+  box-shadow: 0 5px 8px var(--clr-gray-bs);
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-family: var(--ff-logo);
+  font-weight: bolder;
+}
+
+.logo span {
+  color: var(--clr-green);
+}
+
+.nav__list {
+  margin: 0;
+  height: 0;
+  overflow: hidden;
+
+  transition: var(--transition-1);
+  padding: 0;
+
+  font-family: var(--ff-primary);
+}
+
+.nav__list--toggle {
+  margin-top: 2em;
+  height: 10rem;
+
+  transition: var(--transition-1);
+}
+
+.nav__item {
+  list-style: none;
+  padding: 0.75em 0;
+}
+
+.nav__links {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+
+  transition: var(--transition-1);
+}
+
+.nav__links:hover {
+  color: var(--clr-green);
+}
+
+.social {
+  display: none;
+}
+
+.hamburger {
+  font-size: 1.75rem;
+  color: var(--clr-green);
+
+  position: absolute;
+  top: 1.75rem;
+  right: 1em;
+
+  transition: var(--transition-1);
+}
+
+.hamburger--toggle {
+  transform: rotate(90deg);
+  transition: var(--transition-1);
+}
+
+@media (min-width: 900px) {
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .nav-bar {
+    margin: 0;
+    height: auto;
+    overflow: visible;
+  }
+
+  .nav__list {
+    margin: 0 auto;
+  }
+
+  .nav__item + .nav__item {
+    margin-left: 4em;
+  }
+
+  .social {
+    display: flex;
+  }
+
+  .social__link {
+    text-decoration: none;
+    color: var(--clr-green);
+  }
+
+  .social__item + .social__item {
+    margin-left: 1em;
+  }
+
+  .hamburger {
+    display: none;
+  }
+}
